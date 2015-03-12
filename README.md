@@ -6,13 +6,14 @@ introduced in Kafka 0.8.2 using Scala.
 Easiest way to test this is to just clone this repo, then run [this](https://registry.hub.docker.com/u/devdb/kafka/)
 docker container for a development Kafka node with the following:
 ```
-docker pull devdb/kafka:latest
+sudo docker pull devdb/kafka:latest
 sudo docker run -d --net host --name kafka -p 2181:2181 -p 9092:9092 devdb/kafka
-sudo docker exec -it kafka bin/kafka-console-consumer.sh --zookeeper localhost:2181 --from-beginning --topic test
+sudo docker exec -it kafka bin/kafka-console-consumer.sh \
+                 --zookeeper localhost:2181 --from-beginning --topic test
 ```
-This will start up Kafka and start consuming the topic test to the console.
+This will start up Kafka and a console consumer for the topic **test**.
 
-The open another terminal and run the test code:
+Then open another terminal and run the actual producer test code:
 ```
 ./activator "run 1234"
 ```
