@@ -2,11 +2,11 @@ name := """kafka-producer-test"""
 
 version := "1.0"
 
-scalaVersion := "2.11.5"
+scalaVersion := "2.11.6"
 
-// Change this to another test framework if you prefer
-libraryDependencies += "org.scalatest" %% "scalatest" % "2.2.4" % "test"
-
-// Uncomment to use Akka
-//libraryDependencies += "com.typesafe.akka" % "akka-actor_2.11" % "2.3.9"
-
+libraryDependencies ++= Seq(
+  "org.apache.logging.log4j"  % "log4j-api"         % "2.2",
+  "org.apache.logging.log4j"  % "log4j-core"        % "2.2",
+  "org.apache.logging.log4j"  % "log4j-slf4j-impl"  % "2.2",
+  "org.apache.kafka"          % "kafka-clients"     % "0.8.2.1"
+)
