@@ -20,3 +20,10 @@ Then open another terminal and run the actual producer test code:
 
 If everything works this should produce **1234** events on the Kafka topic **test** which the should be
 consumed and outputted in the other terminal.
+
+As stated the new Kafka Producer is to be considered as Beta quality so your milage trying this may differ.
+Depending on OS and Docker version you might need to do some extra configuratiopn to make things work correctly.
+
+I've only tested this on Linux and docker v1.5.0 where the docker container will share hostname with the host by using ```--net host```.
+
+If you're running [boot2docker](http://boot2docker.io/) it might not work out of the box, but adding the hostname ```boot2docker``` to  ```/etc/hosts``` might help.
